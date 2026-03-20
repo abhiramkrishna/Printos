@@ -2,790 +2,1669 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Printos </title>
-  <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 122.26 150.6'%3E%3Cpath fill='%232D9ED8' d='M122.26,61.13c0,33.76-27.37,61.13-61.13,61.13-7.42,0-14.54-1.32-21.12-3.75v-57.38c0-11.65,9.47-21.13,21.12-21.13s21.13,9.48,21.13,21.13-9.48,21.13-21.13,21.13c-4.53,0-8.73-1.43-12.17-3.88v22.04c3.85,1.2,7.93,1.84,12.17,1.84,22.68,0,41.13-18.45,41.13-41.13s-18.45-41.13-41.13-41.13S20.01,38.45,20.01,61.13v45.23C7.72,95.18,0,79.06,0,61.13,0,27.37,27.37,0,61.13,0s61.13,27.37,61.13,61.13Z'/%3E%3Cpolygon fill='%232D9ED8' points='20.01 106.36 40.01 118.51 40.01 150.6 20.01 150.6 20.01 106.36'/%3E%3C/svg%3E">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printos</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 122.26 150.6'%3E%3Cpath fill='%232D9ED8' d='M122.26,61.13c0,33.76-27.37,61.13-61.13,61.13-7.42,0-14.54-1.32-21.12-3.75v-57.38c0-11.65,9.47-21.13,21.12-21.13s21.13,9.48,21.13,21.13-9.48,21.13-21.13,21.13c-4.53,0-8.73-1.43-12.17-3.88v22.04c3.85,1.2,7.93,1.84,12.17,1.84,22.68,0,41.13-18.45,41.13-41.13s-18.45-41.13-41.13-41.13S20.01,38.45,20.01,61.13v45.23C7.72,95.18,0,79.06,0,61.13,0,27.37,27.37,0,61.13,0s61.13,27.37,61.13,61.13Z'/%3E%3Cpolygon fill='%232D9ED8' points='20.01 106.36 40.01 118.51 40.01 150.6 20.01 150.6 20.01 106.36'/%3E%3C/svg%3E">
 
-  <!-- Google Fonts: Poppins -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Google+Sans+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Poppins', 'sans-serif'],
-          },
-          colors: {
-            brand: {
-              DEFAULT: '#2D9ED8',
-              dark: '#1e7eb0',
-              light: '#f0f8fc',
-              muted: '#8cbcd6'
-            },
-            dark: '#0f172a'
-          },
-          boxShadow: {
-            'elegant': '0 20px 40px -15px rgba(0,0,0,0.05)',
-            'elegant-hover': '0 30px 60px -15px rgba(45,158,216,0.15)',
-            'mega-menu': '0 10px 30px -10px rgba(0,0,0,0.1)',
-          }
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Google Sans', 'Poppins', 'sans-serif'] },
+                    colors: {
+                        brand: { DEFAULT: '#2D9ED8', dark: '#1e7eb0', light: '#f0f8fc', muted: '#8cbcd6' },
+                        dark: '#0f172a'
+                    },
+                    boxShadow: {
+                        'elegant': '0 20px 40px -15px rgba(0,0,0,0.05)',
+                        'elegant-hover': '0 30px 60px -15px rgba(45,158,216,0.15)',
+                        'mega-menu': '0 10px 30px -10px rgba(0,0,0,0.1)',
+                    }
+                }
+            }
         }
-      }
-    }
-  </script>
+    </script>
 
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <script crossorigin src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-  <!-- React, ReactDOM, Babel, Lucide -->
-  <script crossorigin src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body {
+            font-family: 'Google Sans', 'Poppins', sans-serif;
+            background-color: #fafafa;
+            color: #0f172a;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
 
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        .material-symbols-rounded {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            vertical-align: middle;
+            font-size: 24px;
+            line-height: 1;
+        }
 
-  <!-- GSAP & ScrollTrigger -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        .star-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
 
-  <!-- Material Symbols Rounded (Icons) -->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
 
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #fafafa;
-      color: #0f172a;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
 
-    /* Material Symbols defaults */
-    .material-symbols-rounded {
-      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      vertical-align: middle;
-      font-size: 24px;
-      line-height: 1;
-    }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
 
-    /* Hide scrollbar for clean look */
-    ::-webkit-scrollbar {
-      width: 6px;
-    }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2D9ED8;
+        }
 
-    ::-webkit-scrollbar-track {
-      background: #f1f5f9;
-    }
+        .hover-lift {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform;
+        }
 
-    ::-webkit-scrollbar-thumb {
-      background: #cbd5e1;
-      border-radius: 4px;
-    }
+        .hover-lift:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 30px 60px -15px rgba(45, 158, 216, 0.2);
+        }
 
-    ::-webkit-scrollbar-thumb:hover {
-      background: #2D9ED8;
-    }
+        .image-parallax-container {
+            overflow: hidden;
+            position: relative;
+        }
 
-    /* Custom 3D Swiper Styles */
-    .hero-swiper {
-      width: 100%;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      overflow: visible;
-    }
+        .image-parallax-inner {
+            position: absolute;
+            top: -10%;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            object-fit: cover;
+            will-change: transform;
+        }
 
-    .hero-swiper .swiper-slide {
-      background-position: center;
-      background-size: cover;
-      /* Reduced width/height to fix overlap with text */
-      width: 320px;
-      height: 460px;
-      border-radius: 20px;
-      overflow: hidden;
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    }
+        .parallax-aspect-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 133%;
+        }
 
-    /* Apply blur and dim to non-active slides */
-    .hero-swiper .swiper-slide:not(.swiper-slide-active) {
-      filter: blur(8px) brightness(0.7);
-      opacity: 0.85;
-    }
+        .reveal-text {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
 
-    /* Keep active slide sharp and bright */
-    .hero-swiper .swiper-slide-active {
-      filter: blur(0px) brightness(1);
-      opacity: 1;
-      box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.5);
-    }
+        .reveal-text>* {
+            transform: translateY(100%);
+            opacity: 0;
+            display: inline-block;
+            will-change: transform;
+        }
 
-    @media (max-width: 768px) {
-      .hero-swiper .swiper-slide {
-        width: 260px;
-        height: 380px;
-      }
-    }
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            will-change: transform, opacity;
+        }
 
-    .hover-lift {
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: transform;
-    }
+        @keyframes blink {
 
-    .hover-lift:hover {
-      transform: translateY(-12px) scale(1.02);
-      box-shadow: 0 30px 60px -15px rgba(45, 158, 216, 0.2);
-    }
+            0%,
+            90%,
+            100% {
+                transform: scaleY(1);
+            }
 
-    .image-parallax-container {
-      overflow: hidden;
-      position: relative;
-    }
+            95% {
+                transform: scaleY(0.1);
+            }
+        }
 
-    .image-parallax-inner {
-      height: 120%;
-      width: 100%;
-      object-fit: cover;
-      will-change: transform;
-    }
+        @keyframes breathe {
 
-    .reveal-text {
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    }
+            0%,
+            100% {
+                transform: translateY(0);
+            }
 
-    .reveal-text>* {
-      transform: translateY(100%);
-      opacity: 0;
-      display: inline-block;
-      will-change: transform;
-    }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
 
-    .fade-up {
-      opacity: 0;
-      transform: translateY(40px);
-      will-change: transform, opacity;
-    }
+        .animate-blink {
+            animation: blink 5s infinite;
+        }
 
-    .text-outline {
-      color: transparent;
-      -webkit-text-stroke: 1px rgba(15, 23, 42, 0.2);
-    }
-  </style>
+        .animate-breathe {
+            animation: breathe 4s ease-in-out infinite;
+        }
+
+        .pupil {
+            transition: transform 0.1s ease-out;
+        }
+
+        .blush {
+            transition: all 0.4s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mega-menu-panel {
+            animation: slideDown 0.2s ease-out;
+        }
+
+        /* Infinite Marquee */
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: scroll-left 40s linear infinite;
+        }
+
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+
+        /* Clay buttons */
+        .clay-btn {
+            background: #ffffff;
+            /* Update to match the softer, whiter shadow in the image */
+            box-shadow:
+                4px 4px 10px rgba(166, 180, 200, 0.2),
+                -4px -4px 10px rgba(255, 255, 255, 1),
+                inset 1px 1px 2px rgba(255, 255, 255, 1),
+                inset -1px -2px 4px rgba(166, 180, 200, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            color: #3f3f46;
+            font-weight: 700;
+            white-space: nowrap;
+            border-radius: 9999px;
+            padding: 10px 24px;
+            font-size: 14px;
+        }
+
+        .clay-btn:hover {
+            background: #ffffff;
+            box-shadow:
+                0 0 20px rgba(45, 158, 216, 0.3),
+                -4px -4px 10px rgba(255, 255, 255, 1),
+                inset 1px 1px 2px rgba(255, 255, 255, 1),
+                inset -1px -2px 4px rgba(45, 158, 216, 0.15);
+            color: #2D9ED8;
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        /* Clay Panels for Cards */
+        .clay-panel {
+            background: #ffffff;
+            box-shadow:
+                6px 6px 16px rgba(166, 180, 200, 0.25),
+                -6px -6px 16px rgba(255, 255, 255, 1),
+                inset 2px 2px 4px rgba(255, 255, 255, 1),
+                inset -2px -4px 6px rgba(166, 180, 200, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .clay-panel:hover {
+            background: #f8fbff;
+            box-shadow:
+                0 15px 30px rgba(45, 158, 216, 0.2),
+                -6px -6px 16px rgba(255, 255, 255, 1),
+                inset 2px 2px 4px rgba(255, 255, 255, 1),
+                inset -2px -4px 6px rgba(45, 158, 216, 0.15);
+            transform: translateY(-5px);
+            border-color: rgba(45, 158, 216, 0.3);
+        }
+
+        .clay-panel-brand {
+            background: #2D9ED8;
+            box-shadow:
+                8px 8px 20px rgba(45, 158, 216, 0.4),
+                -6px -6px 16px rgba(255, 255, 255, 0.9),
+                inset 2px 2px 5px rgba(255, 255, 255, 0.5),
+                inset -3px -5px 8px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .clay-panel-brand:hover {
+            background: #35a8e4;
+            box-shadow:
+                0 20px 40px rgba(45, 158, 216, 0.5),
+                -6px -6px 16px rgba(255, 255, 255, 0.9),
+                inset 2px 2px 5px rgba(255, 255, 255, 0.5),
+                inset -3px -5px 8px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .hero-stage {
+            position: relative;
+            width: clamp(560px, 72vw, 860px);
+            height: clamp(420px, 56vw, 660px);
+            margin: 0 auto;
+        }
+
+        .hero-character {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: clamp(320px, 45vw, 520px);
+            pointer-events: none;
+        }
+
+        .arc-btn-wrap {
+            position: absolute;
+            left: 50%;
+            bottom: 38%;
+            transform: translate(calc(-50% + var(--bx)), calc(50% - var(--by)));
+        }
+
+        .testimonial-swiper .swiper-pagination-bullet {
+            background: #cbd5e1;
+            opacity: 0.5;
+        }
+
+        .testimonial-swiper .swiper-pagination-bullet-active {
+            background: #2D9ED8;
+            opacity: 1;
+        }
+    </style>
 </head>
 
 <body>
-  <div id="root"></div>
+    <div id="root"></div>
 
-  <script type="text/babel">
-    const { useState, useEffect, useRef, useLayoutEffect } = React;
+    <script type="text/babel">
+        const { useState, useEffect, useRef, useLayoutEffect } = React;
 
-    gsap.registerPlugin(ScrollTrigger);
+        gsap.registerPlugin(ScrollTrigger);
 
+        // ─── MEGA MENU DATA ───────────────────────────────────────────────────────
+        const CATEGORY_NAMES = [
+            "All Products", "Apparel", "Photo Gifts", "Stationery",
+            "Packaging", "Signage", "Corporate Gifts", "Drinkware"
+        ];
 
-    // --- MEGA MENU DATA ---
-    const CATEGORY_NAMES = [
-      "All Products", "Apparel", "Photo Gifts", "Stationery", "Packaging",
-      "Signage", "Corporate Gifts", "Drinkware"
-    ];
+        const MEGA_MENU_DATA = {
+            "Apparel": [{ title: "T-Shirts", links: ["Short Sleeve", "Long Sleeve", "V-Neck", "Performance"] }, { title: "Outerwear", links: ["Hoodies", "Jackets", "1/4 Zips", "Sweaters"] }, { title: "Headwear", links: ["Baseball Caps", "Beanies", "Visors"] }, { title: "Bags", links: ["Tote Bags", "Backpacks", "Duffels"] }],
+            "Photo Gifts": [{ title: "Wall Art", links: ["Canvas Prints", "Metal Prints", "Acrylic", "Wood Prints"] }, { title: "Books & Calendars", links: ["Photo Books", "Wall Calendars", "Desk Calendars"] }, { title: "Home Decor", links: ["Custom Blankets", "Pillows", "Coasters"] }],
+            "Stationery": [{ title: "Business Cards", links: ["Standard", "Premium", "Square", "Foil Accent"] }, { title: "Marketing", links: ["Flyers", "Postcards", "Brochures", "Rack Cards"] }, { title: "Office", links: ["Letterheads", "Envelopes", "Notepads", "Sticky Notes"] }],
+            "Packaging": [{ title: "Boxes", links: ["Mailer Boxes", "Product Boxes", "Shipping Boxes"] }, { title: "Labels & Stickers", links: ["Roll Labels", "Sheet Stickers", "Die-Cut Stickers"] }, { title: "Supplies", links: ["Custom Tape", "Tissue Paper", "Poly Mailers"] }],
+            "Signage": [{ title: "Banners", links: ["Vinyl Banners", "Retractable Banners", "Mesh Banners"] }, { title: "Signs", links: ["Yard Signs", "Aluminum Signs", "A-Frame Signs"] }, { title: "Decals", links: ["Window Decals", "Wall Decals", "Car Decals"] }],
+            "Corporate Gifts": [{ title: "Tech", links: ["Power Banks", "USB Drives", "Speakers", "Earbuds"] }, { title: "Office Accessories", links: ["Pens", "Notebooks", "Padfolios", "Mouse Pads"] }, { title: "Awards", links: ["Glass Awards", "Acrylic Awards", "Plaques"] }],
+            "Drinkware": [{ title: "Mugs", links: ["Ceramic Mugs", "Travel Mugs", "Campfire Mugs"] }, { title: "Bottles", links: ["Water Bottles", "Insulated Bottles", "Aluminium"] }, { title: "Tumblers", links: ["Stainless Steel", "Wine Tumblers", "Plastic Tumblers"] }]
+        };
+        MEGA_MENU_DATA["All Products"] = Object.keys(MEGA_MENU_DATA).map(k => ({ title: k, links: MEGA_MENU_DATA[k].map(s => s.title) }));
 
-    const MEGA_MENU_DATA = {
-      "Apparel": [
-        { title: "T-Shirts", links: ["Short Sleeve", "Long Sleeve", "V-Neck", "Performance"] },
-        { title: "Outerwear", links: ["Hoodies", "Jackets", "1/4 Zips", "Sweaters"] },
-        { title: "Headwear", links: ["Baseball Caps", "Beanies", "Visors"] },
-        { title: "Bags", links: ["Tote Bags", "Backpacks", "Duffels"] }
-      ],
-      "Photo Gifts": [
-        { title: "Wall Art", links: ["Canvas Prints", "Metal Prints", "Acrylic", "Wood Prints"] },
-        { title: "Books & Calendars", links: ["Photo Books", "Wall Calendars", "Desk Calendars"] },
-        { title: "Home Decor", links: ["Custom Blankets", "Pillows", "Coasters"] }
-      ],
-      "Stationery": [
-        { title: "Business Cards", links: ["Standard", "Premium", "Square", "Foil Accent"] },
-        { title: "Marketing", links: ["Flyers", "Postcards", "Brochures", "Rack Cards"] },
-        { title: "Office", links: ["Letterheads", "Envelopes", "Notepads", "Sticky Notes"] }
-      ],
-      "Packaging": [
-        { title: "Boxes", links: ["Mailer Boxes", "Product Boxes", "Shipping Boxes"] },
-        { title: "Labels & Stickers", links: ["Roll Labels", "Sheet Stickers", "Die-Cut Stickers"] },
-        { title: "Supplies", links: ["Custom Tape", "Tissue Paper", "Poly Mailers"] }
-      ],
-      "Signage": [
-        { title: "Banners", links: ["Vinyl Banners", "Retractable Banners", "Mesh Banners"] },
-        { title: "Signs", links: ["Yard Signs", "Aluminum Signs", "A-Frame Signs"] },
-        { title: "Decals", links: ["Window Decals", "Wall Decals", "Car Decals"] }
-      ],
-      "Corporate Gifts": [
-        { title: "Tech", links: ["Power Banks", "USB Drives", "Speakers", "Earbuds"] },
-        { title: "Office Accessories", links: ["Pens", "Notebooks", "Padfolios", "Mouse Pads"] },
-        { title: "Awards", links: ["Glass Awards", "Acrylic Awards", "Plaques"] }
-      ],
-      "Drinkware": [
-        { title: "Mugs", links: ["Ceramic Mugs", "Travel Mugs", "Campfire Mugs"] },
-        { title: "Bottles", links: ["Water Bottles", "Insulated Bottles", "Aluminium"] },
-        { title: "Tumblers", links: ["Stainless Steel", "Wine Tumblers", "Plastic Tumblers"] }
-      ]
-    };
+        const LOGO = () => (
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.26 150.6" className="w-9 h-9">
+                <path fill="#2D9ED8" d="M122.26,61.13c0,33.76-27.37,61.13-61.13,61.13-7.42,0-14.54-1.32-21.12-3.75v-57.38c0-11.65,9.47-21.13,21.12-21.13s21.13,9.48,21.13,21.13-9.48,21.13-21.13,21.13c-4.53,0-8.73-1.43-12.17-3.88v22.04c3.85,1.2,7.93,1.84,12.17,1.84,22.68,0,41.13-18.45,41.13-41.13s-18.45-41.13-41.13-41.13S20.01,38.45,20.01,61.13v45.23C7.72,95.18,0,79.06,0,61.13,0,27.37,27.37,0,61.13,0s61.13,27.37,61.13,61.13Z" />
+                <polygon fill="#2D9ED8" points="20.01 106.36 40.01 118.51 40.01 150.6 20.01 150.6 20.01 106.36" />
+            </svg>
+        );
 
-    // Dynamically build "All Products" by combining all the other categories
-    MEGA_MENU_DATA["All Products"] = Object.keys(MEGA_MENU_DATA).map(key => ({
-      title: key,
-      links: MEGA_MENU_DATA[key].map(section => section.title)
-    }));
+        // ─── SINGLE GSAP CONTEXT ──────────────────────────────────────────────────
+        function useGlobalGSAPAnimations() {
+            useLayoutEffect(() => {
+                const raf = requestAnimationFrame(() => {
+                    const ctx = gsap.context(() => {
+                        gsap.utils.toArray('.fade-up').forEach(el => {
+                            ScrollTrigger.create({
+                                trigger: el, start: "top 85%", once: true,
+                                onEnter: () => gsap.to(el, { y: 0, opacity: 1, duration: 1, ease: "power4.out" })
+                            });
+                        });
+                        gsap.utils.toArray('.reveal-text').forEach(el => {
+                            ScrollTrigger.create({
+                                trigger: el, start: "top 85%", once: true,
+                                onEnter: () => gsap.to(el.children, { y: 0, opacity: 1, duration: 1.2, stagger: 0.1, ease: "power4.out" })
+                            });
+                        });
+                        const noMotion = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+                        const isTouch = window.matchMedia('(hover:none)').matches;
+                        if (!noMotion && !isTouch) {
+                            gsap.utils.toArray('.image-parallax-container').forEach(container => {
+                                const img = container.querySelector('.image-parallax-inner');
+                                if (img) gsap.to(img, {
+                                    yPercent: -15, ease: "none",
+                                    scrollTrigger: { trigger: container, start: "top bottom", end: "bottom top", scrub: true }
+                                });
+                            });
+                        }
+                    });
+                    return () => ctx.revert();
+                });
+                return () => cancelAnimationFrame(raf);
+            }, []);
+        }
 
-    const LOGO = () => (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.26 150.6" className="w-9 h-9">
-        <path fill="#2D9ED8" d="M122.26,61.13c0,33.76-27.37,61.13-61.13,61.13-7.42,0-14.54-1.32-21.12-3.75v-57.38c0-11.65,9.47-21.13,21.12-21.13s21.13,9.48,21.13,21.13-9.48,21.13-21.13,21.13c-4.53,0-8.73-1.43-12.17-3.88v22.04c3.85,1.2,7.93,1.84,12.17,1.84,22.68,0,41.13-18.45,41.13-41.13s-18.45-41.13-41.13-41.13S20.01,38.45,20.01,61.13v45.23C7.72,95.18,0,79.06,0,61.13,0,27.37,27.37,0,61.13,0s61.13,27.37,61.13,61.13Z" />
-        <polygon fill="#2D9ED8" points="20.01 106.36 40.01 118.51 40.01 150.6 20.01 150.6 20.01 106.36" />
-      </svg>
-    );
+        // ─── HEADER ───────────────────────────────────────────────────────────────
+        function Header() {
+            const [activeMenu, setActiveMenu] = useState(null);
+            const tid = useRef(null);
+            const enter = name => { clearTimeout(tid.current); setActiveMenu(name); };
+            const leave = () => { tid.current = setTimeout(() => setActiveMenu(null), 150); };
+            useEffect(() => () => clearTimeout(tid.current), []);
 
-    // --- REUSABLE HOOKS ---
-    function useGSAPAnimations() {
-      useLayoutEffect(() => {
-        let ctx = gsap.context(() => {
-          gsap.utils.toArray('.fade-up').forEach(elem => {
-            ScrollTrigger.create({ trigger: elem, start: "top 85%", onEnter: () => gsap.to(elem, { y: 0, opacity: 1, duration: 1, ease: "power4.out" }) });
-          });
-          gsap.utils.toArray('.reveal-text').forEach(elem => {
-            ScrollTrigger.create({ trigger: elem, start: "top 85%", onEnter: () => { gsap.to(elem.children, { y: 0, opacity: 1, duration: 1.2, stagger: 0.1, ease: "power4.out" }); } });
-          });
-          gsap.utils.toArray('.image-parallax-container').forEach(container => {
-            const img = container.querySelector('.image-parallax-inner');
-            gsap.to(img, { yPercent: -20, ease: "none", scrollTrigger: { trigger: container, start: "top bottom", end: "bottom top", scrub: true } });
-          });
-          const marquee = document.querySelector('.scroll-marquee');
-          if (marquee) {
-            gsap.to(marquee, { xPercent: -50, ease: "none", scrollTrigger: { trigger: document.body, start: "top top", end: "bottom bottom", scrub: 1 } });
-          }
-        });
-        return () => ctx.revert();
-      }, []);
-    }
-
-    // --- HEADER WITH MEGA MENU ---
-    function Header() {
-      const [activeMenu, setActiveMenu] = useState(null);
-      let timeoutId = useRef(null);
-
-      const handleMouseEnter = (menuName) => {
-        clearTimeout(timeoutId.current);
-        setActiveMenu(menuName);
-      };
-
-      const handleMouseLeave = () => {
-        timeoutId.current = setTimeout(() => {
-          setActiveMenu(null);
-        }, 150);
-      };
-
-      return (
-        <header className="sticky top-0 w-full z-50 bg-white shadow-sm flex flex-col" onMouseLeave={handleMouseLeave}>
-          {/* Top Bar (Logo, Search, Icons) */}
-          <div className="border-b border-gray-100 relative z-20 bg-white">
-            <div className="max-w-[1600px] mx-auto px-6 tracking-tight lg:px-12 flex justify-between items-center py-4">
-
-              <div className="flex items-center gap-2 cursor-pointer z-20">
-                <LOGO />
-                <span className="text-2xl font-black tracking-normal">Printos</span>
-              </div>
-
-              <div className="hidden lg:flex flex-1 max-w-xl mx-8 relative z-20">
-                <input
-                  type="text"
-                  placeholder="Search products, materials, and more..."
-                  className="w-full bg-gray-50 border border-gray-200 text-gray-800 text-sm font-medium px-5 py-2.5 rounded-full outline-none focus:border-brand transition-colors"
-                />
-                <button className="absolute right-3 top-1/2 -translate-y-1/2 text-brand">
-                  <span className="material-symbols-rounded" style={{ fontSize: '20px' }}>search</span>
-                </button>
-              </div>
-
-              <div className="flex items-center gap-6 z-20">
-                <button className="flex flex-col items-center justify-center text-gray-700 hover:text-brand transition-colors">
-                  <span className="material-symbols-rounded">help</span>
-                  <span className="text-[10px] font-semibold mt-1">Help</span>
-                </button>
-                <button className="flex flex-col items-center justify-center text-gray-700 hover:text-brand transition-colors">
-                  <span className="material-symbols-rounded">person</span>
-                  <span className="text-[10px] font-semibold mt-1">Sign In</span>
-                </button>
-                <button className="flex flex-col items-center justify-center text-gray-700 hover:text-brand transition-colors relative">
-                  <span className="material-symbols-rounded">shopping_cart_checkout</span>
-                  <span className="text-[10px] font-semibold mt-1">Cart</span>
-                  <span className="absolute -top-1 -right-1 w-4 h-4 bg-brand text-white text-[9px] font-bold rounded-full flex items-center justify-center">0</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom Bar (Categories Horizonatal Navigation) */}
-          <div className="bg-white relative z-20 hidden lg:block border-b border-gray-100">
-            <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
-              <nav className="flex space-x-8">
-                {CATEGORY_NAMES.map(cat => (
-                  <button
-                    key={cat}
-                    onMouseEnter={() => handleMouseEnter(cat)}
-                    className={`py-3 text-[13px] font-semibold tracking-wide border-b-2 transition-all ${activeMenu === cat ? 'border-brand text-brand' : 'border-transparent text-gray-700 hover:text-brand'}`}
-                  >
-                    {cat}
-                  </button>
-                ))}
-              </nav>
-            </div>
-          </div>
-
-          {/* Mega Menu Dropdown Pane */}
-          {activeMenu && MEGA_MENU_DATA[activeMenu] && (
-            <div
-              className="absolute left-0 right-0 w-full bg-white shadow-mega-menu border-b border-gray-200 z-10 animate-[slideDown_0.2s_ease-out]"
-              style={{ top: '100%' }}
-              onMouseEnter={() => handleMouseEnter(activeMenu)}
-            >
-              <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-10">
-                <div className={`grid gap-8 ${activeMenu === "All Products" ? 'grid-cols-4 lg:grid-cols-7' : 'grid-cols-2 lg:grid-cols-4'}`}>
-                  {MEGA_MENU_DATA[activeMenu].map((col, idx) => (
-                    <div key={idx} className="flex flex-col space-y-4">
-                      <h4 className="font-bold text-gray-900 border-b border-gray-100 pb-2 text-sm">{col.title}</h4>
-                      <ul className="space-y-3">
-                        {col.links.map((link, j) => (
-                          <li key={j}>
-                            <a href="#" className="text-gray-600 hover:text-brand text-sm transition-colors block">
-                              {link}
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
+            return (
+                <header className="sticky top-0 w-full z-50 bg-white shadow-sm flex flex-col" onMouseLeave={leave}>
+                    <div className="border-b border-gray-100 relative z-20 bg-white">
+                        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 flex justify-between items-center py-4 tracking-tight">
+                            <div className="flex items-center gap-2 cursor-pointer z-20"><LOGO /><span className="text-2xl font-black tracking-normal">Printos</span></div>
+                            <div className="hidden lg:flex flex-1 max-w-xl mx-8 relative z-20">
+                                <input type="text" placeholder="Search products, materials, and more..."
+                                    className="w-full bg-gray-50 border border-gray-200 text-gray-800 text-sm font-medium px-5 py-2.5 rounded-full outline-none focus:border-brand transition-colors" />
+                                <button className="absolute right-3 top-1/2 -translate-y-1/2 text-brand">
+                                    <span className="material-symbols-rounded" style={{ fontSize: '20px' }}>search</span>
+                                </button>
+                            </div>
+                            <div className="flex items-center gap-6 z-20">
+                                <button className="flex flex-col items-center text-gray-700 hover:text-brand transition-colors" title="Help">
+                                    <span className="material-symbols-rounded" style={{ fontSize: '28px' }}>help</span>
+                                </button>
+                                <button className="flex flex-col items-center text-gray-700 hover:text-brand transition-colors" title="Sign In">
+                                    <span className="material-symbols-rounded" style={{ fontSize: '28px' }}>person</span>
+                                </button>
+                                <button className="flex flex-col items-center text-gray-700 hover:text-brand transition-colors relative" title="Cart">
+                                    <span className="material-symbols-rounded" style={{ fontSize: '28px' }}>shopping_cart_checkout</span>
+                                    <span className="absolute -top-1 -right-2 w-[18px] h-[18px] bg-brand text-white text-[9px] font-bold rounded-full flex items-center justify-center shadow-sm">0</span>
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                  ))}
-                  {/* Promo Graphic for Sub-menus (exclude on "All Products" for space) */}
-                  {activeMenu !== "All Products" && (
-                    <div className="col-span-1 lg:col-span-1 lg:col-start-4 hidden lg:block bg-brand-light rounded-xl overflow-hidden relative">
-                      <img
-                        src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=400&q=80"
-                        alt="Promo"
-                        className="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-50"
-                      />
-                      <div className="relative z-10 p-6 flex flex-col justify-end h-full">
-                        <span className="bg-brand text-white text-[10px] uppercase font-bold tracking-widest px-2 py-1 rounded w-fit mb-2">Offer</span>
-                        <h5 className="font-bold text-dark text-lg mb-2">20% Off {activeMenu}</h5>
-                        <a href="#" className="text-brand font-semibold text-sm hover:underline flex items-center">
-                          Shop Sale <span className="material-symbols-rounded ml-1" style={{ fontSize: '16px' }}>arrow_right_alt</span>
-                        </a>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-          )}
 
-          <style dangerouslySetInnerHTML={{
-            __html: `
-            @keyframes slideDown {
-              from { opacity: 0; transform: translateY(-10px); }
-              to { opacity: 1; transform: translateY(0); }
+                    <div className="bg-white relative z-20 hidden lg:block border-b border-gray-100">
+                        <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+                            <nav className="flex justify-center space-x-10">
+                                {CATEGORY_NAMES.map(cat => (
+                                    <button key={cat} onMouseEnter={() => enter(cat)}
+                                        className={`py-3.5 text-[15px] font-semibold tracking-wide border-b-2 transition-all ${activeMenu === cat ? 'border-brand text-brand' : 'border-transparent text-gray-700 hover:text-brand'}`}>
+                                        {cat}
+                                    </button>
+                                ))}
+                            </nav>
+                        </div>
+                    </div>
+
+                    {activeMenu && MEGA_MENU_DATA[activeMenu] && (
+                        <div className="mega-menu-panel absolute left-0 right-0 w-full bg-white shadow-mega-menu border-b border-gray-200 z-10"
+                            style={{ top: '100%' }} onMouseEnter={() => enter(activeMenu)}>
+                            <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-10">
+                                <div className={`grid gap-8 ${activeMenu === "All Products" ? 'grid-cols-4 lg:grid-cols-7' : 'grid-cols-2 lg:grid-cols-4'}`}>
+                                    {MEGA_MENU_DATA[activeMenu].map((col, i) => (
+                                        <div key={i} className="flex flex-col space-y-4">
+                                            <h4 className="font-bold text-gray-900 border-b border-gray-100 pb-2 text-sm">{col.title}</h4>
+                                            <ul className="space-y-3">
+                                                {col.links.map((l, j) => (
+                                                    <li key={j}><a href="#" className="text-gray-600 hover:text-brand text-sm transition-colors block">{l}</a></li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    ))}
+                                    {activeMenu !== "All Products" && (
+                                        <div className="col-span-1 lg:col-span-1 lg:col-start-4 hidden lg:block bg-brand-light rounded-xl overflow-hidden relative min-h-[180px]">
+                                            <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=400&q=80" alt="Promo"
+                                                className="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-50" loading="lazy" />
+                                            <div className="relative z-10 p-6 flex flex-col justify-end h-full">
+                                                <span className="bg-brand text-white text-[10px] uppercase font-bold tracking-widest px-2 py-1 rounded w-fit mb-2">Offer</span>
+                                                <h5 className="font-bold text-dark text-lg mb-2">20% Off {activeMenu}</h5>
+                                                <a href="#" className="text-brand font-semibold text-sm hover:underline flex items-center">
+                                                    Shop Sale <span className="material-symbols-rounded ml-1" style={{ fontSize: '16px' }}>arrow_right_alt</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                </header>
+            );
+        }
+
+        // ─── HERO STAMP CARD DATA ────────────────────────────────────────────────────
+        const HERO_CARDS = [
+            {
+                id: 0, label: "Apparel", color: "#2D9ED8", bg: "#e8f5fd",
+                icon: (
+                    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '70px', height: '70px' }}>
+                        <path d="M20 18L10 30L22 34V62H58V34L70 30L60 18L50 24C47 20 43 18 40 18C37 18 33 20 30 24L20 18Z" fill="white" opacity="0.9" />
+                        <path d="M20 18L10 30L22 34V62H58V34L70 30L60 18L50 24C47 20 43 18 40 18C37 18 33 20 30 24L20 18Z" fill="none" stroke="white" strokeWidth="2" strokeLinejoin="round" />
+                        <circle cx="40" cy="26" r="5" fill="white" opacity="0.5" />
+                    </svg>
+                )
+            },
+            {
+                id: 1, label: "Photo Gifts", color: "#f97316", bg: "#fff3e8",
+                icon: (
+                    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '70px', height: '70px' }}>
+                        <rect x="14" y="22" width="52" height="40" rx="5" fill="white" opacity="0.85" />
+                        <circle cx="40" cy="42" r="11" fill="white" opacity="0.6" />
+                        <rect x="32" y="16" width="16" height="10" rx="3" fill="white" opacity="0.7" />
+                        <circle cx="57" cy="29" r="3" fill="white" />
+                    </svg>
+                )
+            },
+            {
+                id: 2, label: "Stationery", color: "#8b5cf6", bg: "#f3eeff",
+                icon: (
+                    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '70px', height: '70px' }}>
+                        <rect x="20" y="14" width="36" height="52" rx="4" fill="white" opacity="0.85" />
+                        <rect x="26" y="24" width="24" height="3" rx="1.5" fill="white" opacity="0.6" />
+                        <rect x="26" y="32" width="20" height="3" rx="1.5" fill="white" opacity="0.6" />
+                        <rect x="26" y="40" width="16" height="3" rx="1.5" fill="white" opacity="0.6" />
+                        <path d="M52 52L60 60" stroke="white" strokeWidth="3" strokeLinecap="round" />
+                        <circle cx="50" cy="51" r="5" fill="white" opacity="0.7" />
+                    </svg>
+                )
+            },
+            {
+                id: 3, label: "All Products", color: "#2D9ED8", bg: "#e8f5fd",
+                icon: (
+                    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '70px', height: '70px' }}>
+                        <rect x="12" y="12" width="24" height="24" rx="4" fill="white" opacity="0.85" />
+                        <rect x="44" y="12" width="24" height="24" rx="4" fill="white" opacity="0.7" />
+                        <rect x="12" y="44" width="24" height="24" rx="4" fill="white" opacity="0.7" />
+                        <rect x="44" y="44" width="24" height="24" rx="4" fill="white" opacity="0.85" />
+                    </svg>
+                )
+            },
+            {
+                id: 4, label: "Packaging", color: "#10b981", bg: "#e6faf4",
+                icon: (
+                    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '70px', height: '70px' }}>
+                        <path d="M40 14L62 26V54L40 66L18 54V26L40 14Z" fill="white" opacity="0.85" />
+                        <path d="M40 14L40 66M18 26L62 26" stroke="white" strokeWidth="2" opacity="0.5" />
+                        <path d="M40 14L62 26" stroke="white" strokeWidth="2" opacity="0.6" />
+                        <path d="M40 14L18 26" stroke="white" strokeWidth="2" opacity="0.6" />
+                    </svg>
+                )
+            },
+            {
+                id: 5, label: "Signage", color: "#ef4444", bg: "#fef0f0",
+                icon: (
+                    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '70px', height: '70px' }}>
+                        <rect x="12" y="16" width="56" height="36" rx="5" fill="white" opacity="0.85" />
+                        <rect x="19" y="24" width="30" height="4" rx="2" fill="white" opacity="0.5" />
+                        <rect x="19" y="33" width="20" height="4" rx="2" fill="white" opacity="0.5" />
+                        <line x1="40" y1="52" x2="40" y2="66" stroke="white" strokeWidth="4" strokeLinecap="round" />
+                        <line x1="30" y1="66" x2="50" y2="66" stroke="white" strokeWidth="4" strokeLinecap="round" />
+                    </svg>
+                )
+            },
+            {
+                id: 6, label: "Corporate Gifts", color: "#f59e0b", bg: "#fffbeb",
+                icon: (
+                    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '70px', height: '70px' }}>
+                        <rect x="16" y="34" width="48" height="32" rx="4" fill="white" opacity="0.85" />
+                        <rect x="12" y="26" width="56" height="12" rx="4" fill="white" opacity="0.7" />
+                        <line x1="40" y1="26" x2="40" y2="66" stroke="white" strokeWidth="3" />
+                        <path d="M40 26C40 26 34 16 28 18C22 20 24 28 34 28" stroke="white" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+                        <path d="M40 26C40 26 46 16 52 18C58 20 56 28 46 28" stroke="white" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+                    </svg>
+                )
+            },
+        ];
+
+        // Generates a scalloped/perforated border SVG path for a postage-stamp look
+        function StampCard({ card, isActive, offset, onClick }) {
+            const scallops = 14;
+            const r = 6;
+            const w = 200, h = 240;
+            const points = [];
+
+            // Top edge
+            for (let i = 0; i < scallops; i++) {
+                const x = (i / scallops) * w + w / (scallops * 2);
+                points.push(`${x},${r}`);
             }
-          `}} />
-        </header>
-      );
-    }
+            // Right edge
+            for (let i = 0; i < Math.round(scallops * (h / w)); i++) {
+                const y = (i / Math.round(scallops * (h / w))) * h + h / (Math.round(scallops * (h / w)) * 2);
+                points.push(`${w - r},${y}`);
+            }
+            // Bottom edge (reversed)
+            for (let i = scallops - 1; i >= 0; i--) {
+                const x = (i / scallops) * w + w / (scallops * 2);
+                points.push(`${x},${h - r}`);
+            }
+            // Left edge (reversed)
+            for (let i = Math.round(scallops * (h / w)) - 1; i >= 0; i--) {
+                const y = (i / Math.round(scallops * (h / w))) * h + h / (Math.round(scallops * (h / w)) * 2);
+                points.push(`${r},${y}`);
+            }
 
-    function HeroMasonry() {
-      useGSAPAnimations();
+            const scale = isActive ? 1 : (0.72 - Math.abs(offset) * 0.04);
+            const rotation = isActive ? 0 : (offset * 14);
+            const tx = isActive ? 0 : (offset * 230);
+            const z = isActive ? 10 : (5 - Math.abs(offset));
+            const opacity = isActive ? 1 : (0.85 - Math.abs(offset) * 0.15);
+            // Shift upward so full card + label is visible inside the carousel container
+            const ty = isActive ? '-58%' : '-52%';
 
-      return (
-        <section className="relative pt-16 lg:pt-24 pb-20 bg-white overflow-hidden z-0">
-          <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
-
-            {/* --- TOP HEADER ROW --- */}
-            <div className="flex flex-col md:flex-row justify-between items-center mb-12 md:mb-20 relative">
-
-
-              {/* Center: Main Title */}
-              <div className="text-center max-w-4xl mx-auto z-10 fade-up px-4 md:px-0 mb-8 md:mb-0">
-                <h1 className="text-5xl md:text-6xl lg:text-[76px] font-black text-dark leading-[1.05] tracking-tight">
-                  Elevate Yourself With <br className="hidden lg:block" />
-                  <span className="inline-flex items-center gap-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.26 150.6" className="inline-block h-[0.85em] w-auto" style={{ verticalAlign: 'middle' }}>
-                      <path fill="#2D9ED8" d="M122.26,61.13c0,33.76-27.37,61.13-61.13,61.13-7.42,0-14.54-1.32-21.12-3.75v-57.38c0-11.65,9.47-21.13,21.12-21.13s21.13,9.48,21.13,21.13-9.48,21.13-21.13,21.13c-4.53,0-8.73-1.43-12.17-3.88v22.04c3.85,1.2,7.93,1.84,12.17,1.84,22.68,0,41.13-18.45,41.13-41.13s-18.45-41.13-41.13-41.13S20.01,38.45,20.01,61.13v45.23C7.72,95.18,0,79.06,0,61.13,0,27.37,27.37,0,61.13,0s61.13,27.37,61.13,61.13Z" />
-                      <polygon fill="#2D9ED8" points="20.01 106.36 40.01 118.51 40.01 150.6 20.01 150.6 20.01 106.36" />
+            return (
+                <div
+                    onClick={onClick}
+                    style={{
+                        position: 'absolute',
+                        left: '50%',
+                        top: '50%',
+                        transform: `translateX(calc(-50% + ${tx}px)) translateY(${ty}) rotate(${rotation}deg) scale(${scale})`,
+                        transformOrigin: 'center bottom',
+                        transition: 'all 0.55s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                        zIndex: z,
+                        opacity,
+                        cursor: isActive ? 'default' : 'pointer',
+                        width: '240px',
+                        height: '288px',
+                    }}
+                >
+                    {/* Postage stamp SVG border */}
+                    <svg viewBox={`0 0 ${w} ${h}`} style={{ width: '240px', height: '288px', position: 'absolute', top: 0, left: 0, pointerEvents: 'none' }}>
+                        <defs>
+                            <filter id={`stamp-shadow-${card.id}`} x="-20%" y="-20%" width="140%" height="140%">
+                                <feDropShadow dx="0" dy={isActive ? 14 : 6} stdDeviation={isActive ? 22 : 10} floodColor={card.color} floodOpacity={isActive ? 0.28 : 0.12} />
+                            </filter>
+                        </defs>
+                        <path
+                            d={`M ${r} ${r} ` + points.map((p, i) => {
+                                const [px, py] = p.split(',').map(Number);
+                                return `L ${px} ${py}`;
+                            }).join(' ') + ' Z'}
+                            fill={card.bg}
+                            stroke={card.color}
+                            strokeWidth="1.5"
+                            strokeDasharray={`${r * 2} ${r * 1.2}`}
+                            filter={`url(#stamp-shadow-${card.id})`}
+                            strokeLinejoin="round"
+                        />
                     </svg>
-                    Printos
-                  </span>
-                </h1>
-              </div>
-            </div>
 
-            {/* --- MASONRY IMAGE GRID --- */}
-            <div className="flex flex-col md:flex-row gap-4 lg:gap-6 justify-center items-center md:items-stretch h-auto md:h-[500px] lg:h-[600px] fade-up">
+                    {/* Card inner content - position relative so it renders above the absolute SVG bg */}
+                    <div style={{ position: 'relative', zIndex: 1 }}>
+                        <div style={{
+                            position: 'relative',
+                            margin: '14px',
+                            borderRadius: '14px',
+                            background: card.color,
+                            height: '190px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            overflow: 'hidden',
+                        }}>
+                            {/* Subtle shine overlay */}
+                            <div style={{
+                                position: 'absolute', top: 0, left: 0, right: 0, height: '50%',
+                                background: 'linear-gradient(180deg, rgba(255,255,255,0.18) 0%, transparent 100%)',
+                                borderRadius: '14px 14px 0 0',
+                                pointerEvents: 'none',
+                            }} />
+                            {/* Decorative circles */}
+                            <div style={{ position: 'absolute', top: -20, right: -20, width: 80, height: 80, borderRadius: '50%', background: 'rgba(255,255,255,0.1)' }} />
+                            <div style={{ position: 'absolute', bottom: -15, left: -15, width: 60, height: 60, borderRadius: '50%', background: 'rgba(255,255,255,0.07)' }} />
+                            {/* Icon */}
+                            <div style={{ position: 'relative', zIndex: 2 }}>
+                                {card.icon}
+                            </div>
+                        </div>
 
-              {/* Column 1 */}
-              <div className="flex flex-col gap-4 lg:gap-6 w-full md:w-1/5 h-[500px] md:h-full">
-                <div className="h-[65%] w-full rounded-[24px] rounded-tr-[48px] overflow-hidden group">
-                  <img src="https://i.ibb.co/KcySGy62/Corporate-Gifts.png" alt="Corporate Gifts" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                </div>
-                <div className="h-[35%] w-full rounded-[24px] rounded-bl-[48px] overflow-hidden group bg-yellow-400">
-                  <img src="ttps://i.ibb.co/4RcB6vPW/Package.png" alt="Signage" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                </div>
-              </div>
-
-              {/* Column 2 */}
-              <div className="flex flex-col w-full md:w-1/5 h-[400px] md:h-[85%] self-end">
-                <div className="h-full w-full rounded-[24px] rounded-tl-[48px] overflow-hidden group">
-                  <img src="https://i.ibb.co/ksVnD88m/Signage.png" alt="Package" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                </div>
-              </div>
-
-              {/* Column 3 (Center) */}
-              <div className="flex flex-col gap-6 w-full md:w-1/5 h-[400px] md:h-full justify-center items-center self-center">
-                <div className="w-full aspect-square rounded-[32px] overflow-hidden group bg-yellow-100">
-                  <img src="https://i.ibb.co/v6sTtMtF/All-Incorporated-Together.png" alt="All Incorporated Together" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                </div>
-                <button className="bg-dark hover:bg-brand text-white font-bold py-3 px-5 rounded-full flex items-center justify-center gap-2 transition-all w-full shadow-elegant text-sm">
-                  Explore Collections <span className="material-symbols-rounded" style={{ fontSize: '16px' }}>north_east</span>
-                </button>
-              </div>
-
-              {/* Column 4 */}
-              <div className="flex flex-col w-full md:w-1/5 h-[400px] md:h-[85%] self-start">
-                <div className="h-full w-full rounded-[24px] rounded-tl-[48px] rounded-br-[48px] overflow-hidden group">
-                  <img src="https://i.ibb.co/4w5FVH3c/Gemini-Generated-Image-w1ypnsw1ypnsw1yp.png" alt="Custom Print" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                </div>
-              </div>
-
-              {/* Column 5 */}
-              <div className="flex flex-col gap-4 lg:gap-6 w-full md:w-1/5 h-[500px] md:h-full">
-                <div className="h-[55%] w-full rounded-[24px] rounded-tr-[48px] overflow-hidden group">
-                  <img src="https://i.ibb.co/KcySGy62/Apparel.png" alt="Apparel" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                </div>
-                <div className="h-[45%] w-full rounded-[24px] rounded-br-[48px] overflow-hidden group">
-                  <img src="https://i.ibb.co/fdNDt2cw/Gifts.png" alt="Gifts" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-        </section>
-      );
-    }
-
-    const BUSINESS_NEEDS = [
-      { id: 1, title: "Startups", image: "https://img.freepik.com/free-photo/startup-business-progress-strategy-enterprise_53876-127927.jpg?semt=ais_hybrid&w=740&q=80" },
-      { id: 2, title: "Retail & E-commerce", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80" },
-      { id: 3, title: "Events & Exhibitions", image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=600&q=80" },
-      { id: 4, title: "Corporate Offices", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80" }
-    ];
-
-    const POPULAR_CATEGORIES = [
-      { id: 1, title: "Apparel", image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80" },
-      { id: 2, title: "Stationery", image: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=800&q=80" },
-      { id: 3, title: "Packaging", image: "https://tse1.mm.bing.net/th/id/OIP.9fwp9I5SuEEiUUVpdC6g0wHaEY?rs=1&pid=ImgDetMain&o=7&rm=3" },
-      { id: 4, title: "Signage", image: "https://festoonsigns.com/wp-content/uploads/2023/06/Hospital-Signage.jpg" }
-    ];
-
-    const NEW_LAUNCHES = [
-      { id: 1, title: "Eco-Friendly Mailers", image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=400&q=80" },
-      { id: 2, title: "Holographic Stickers", image: "https://images.unsplash.com/photo-1572375992501-4b0892d50c69?auto=format&fit=crop&w=400&q=80" },
-      { id: 3, title: "Embroidered Caps", image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=400&q=80" },
-      { id: 4, title: "Metallic Business Cards", image: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=400&q=80" },
-      { id: 5, title: "Custom Water Bottles", image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=400&q=80" }
-    ];
-
-    const BEST_SELLERS = [
-      { id: 1, title: "Premium Cotton T-Shirt", image: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=400&q=80" },
-      { id: 2, title: "Matte Business Cards", image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=400&q=80" },
-      { id: 3, title: "Vinyl Banners", image: "https://images.unsplash.com/photo-1562564055-71e051d33c19?auto=format&fit=crop&w=400&q=80" },
-      { id: 4, title: "Ceramic Mugs", image: "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?auto=format&fit=crop&w=400&q=80" },
-      { id: 5, title: "Die-Cut Stickers", image: "https://images.unsplash.com/photo-1572375992501-4b0892d50c69?auto=format&fit=crop&w=400&q=80" },
-      { id: 6, title: "Custom Hoodies", image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=400&q=80" },
-      { id: 7, title: "Designing", image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=600" },
-      { id: 8, title: "Canvas Prints", image: "https://images.unsplash.com/photo-1579762593175-20226054cad0?auto=format&fit=crop&w=400&q=80" }
-    ];
-
-    const TESTIMONIALS = [
-      { id: 1, name: "Sarah Jenkins", text: "The print quality is absolutely phenomenal. Our branded apparel came out exactly as we envisioned.", stars: 5 },
-      { id: 2, name: "Michael Chang", text: "Fast turnaround and incredible customer service. The custom packaging elevated our product unboxing.", stars: 5 },
-      { id: 3, name: "Emma Thompson", text: "Beautiful business cards. The matte finish feels so premium and we constantly get compliments.", stars: 4 }
-    ];
-
-    const FEATURES = [
-      { id: 1, title: "Fast Turn Around", desc: "Get your prints delivered when you need them.", icon: "bolt" },
-      { id: 2, title: "Easy Ordering", desc: "Seamless and hassle-free online checkout.", icon: "touch_app" },
-      { id: 3, title: "Nationwide Quality", desc: "Consistent, premium printing across the board.", icon: "verified" },
-      { id: 4, title: "Wide Product Range", desc: "Everything you need, all in one place.", icon: "category" }
-    ];
-
-    function ShopByBusinessNeeds() {
-      useGSAPAnimations();
-      return (
-        <section className="py-20 bg-white">
-          <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-dark tracking-tight text-center mb-12 fade-up">
-              Shop By Business Needs
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {BUSINESS_NEEDS.map(item => (
-                <div key={item.id} className="fade-up group cursor-pointer relative rounded-2xl overflow-hidden aspect-[4/3] shadow-sm hover:shadow-elegant-hover transition-shadow">
-                  <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <h3 className="text-white font-bold text-lg md:text-xl">{item.title}</h3>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      );
-    }
-
-    function PopularCategories() {
-      useGSAPAnimations();
-      return (
-        <section className="py-20 bg-gray-50">
-          <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-dark tracking-tight mb-12 fade-up">
-              Popular Categories
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {POPULAR_CATEGORIES.map(cat => (
-                <div key={cat.id} className="fade-up group cursor-pointer">
-                  <div className="image-parallax-container rounded-2xl aspect-[3/4] mb-4 overflow-hidden bg-gray-200 hover-lift relative shadow-elegant">
-                    <img src={cat.image} className="image-parallax-inner" alt={cat.title} />
-                    <div className="absolute inset-0 bg-dark/10 group-hover:bg-transparent transition-colors duration-500"></div>
-                  </div>
-                  <h4 className="text-xl font-bold text-dark mb-1 text-center group-hover:text-brand transition-colors">{cat.title}</h4>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      );
-    }
-
-    function NewLaunches() {
-      useGSAPAnimations();
-      return (
-        <section className="py-20 bg-white">
-          <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-dark tracking-tight mb-12 fade-up">
-              New Launches
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {NEW_LAUNCHES.map(item => (
-                <div key={item.id} className="fade-up flex items-center p-4 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow cursor-pointer group">
-                  <div className="w-24 h-24 rounded-xl bg-gray-100 overflow-hidden shrink-0">
-                    <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                  </div>
-                  <div className="ml-4 flex-1">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-brand mb-1 block">New</span>
-                    <h4 className="font-bold text-gray-900 group-hover:text-brand transition-colors line-clamp-2">{item.title}</h4>
-                  </div>
-                </div>
-              ))}
-              {/* Promotional Banner (6th Item) */}
-              <div className="fade-up col-span-1 md:col-span-2 lg:col-span-1 bg-brand rounded-2xl p-8 flex flex-col justify-center relative overflow-hidden text-white shadow-elegant">
-                <div className="absolute -right-10 -top-10 w-40 h-40 bg-white opacity-10 rounded-full"></div>
-                <div className="relative z-10">
-                  <h4 className="text-2xl font-extrabold mb-2">Summer Sale!</h4>
-                  <p className="text-brand-light mb-6 font-medium">Get up to 30% off on all new arrivals this week.</p>
-                  <button className="bg-white text-brand font-bold py-2.5 px-6 rounded-full shadow-sm hover:shadow-md hover:scale-105 transition-all w-fit">
-                    Shop Now
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      );
-    }
-
-    function BestSellers() {
-      useGSAPAnimations();
-      return (
-        <section className="py-20 bg-gray-50">
-          <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-dark tracking-tight mb-12 fade-up">
-              Best Sellers
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {BEST_SELLERS.map(item => (
-                <div key={item.id} className="fade-up group cursor-pointer bg-white p-4 rounded-2xl border border-gray-100 shadow-sm hover:shadow-elegant-hover transition-all">
-                  <div className="aspect-square bg-gray-100 rounded-xl mb-4 overflow-hidden relative">
-                    <img src={item.image} alt={item.title} className="w-full h-full object-cover mix-blend-multiply transition-transform duration-700 group-hover:scale-105" />
-                  </div>
-                  <h4 className="font-semibold text-gray-900 leading-tight group-hover:text-brand transition-colors line-clamp-1">{item.title}</h4>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      );
-    }
-
-    function CustomerTestimonials() {
-      useEffect(() => {
-        new Swiper('.testimonial-swiper', {
-          slidesPerView: 1,
-          spaceBetween: 30,
-          loop: true,
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-          },
-          autoplay: { delay: 5000 },
-        });
-      }, []);
-
-      return (
-        <section className="py-24 bg-dark text-white text-center">
-          <div className="max-w-[800px] mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-12">
-              Customer Testimonials
-            </h2>
-            <div className="swiper testimonial-swiper pb-12">
-              <div className="swiper-wrapper">
-                {TESTIMONIALS.map(item => (
-                  <div key={item.id} className="swiper-slide cursor-grab">
-                    <div className="flex justify-center items-center mb-6 text-yellow-400">
-                      {[...Array(item.stars)].map((_, i) => (
-                        <span className="material-symbols-rounded mx-1 fill-current">star</span>
-                      ))}
+                        {/* Label */}
+                        <div style={{
+                            textAlign: 'center',
+                            paddingTop: '6px',
+                            paddingBottom: '6px',
+                            fontWeight: 800,
+                            fontSize: '15px',
+                            color: card.color,
+                            letterSpacing: '-0.3px',
+                            fontFamily: 'Poppins, sans-serif',
+                        }}>
+                            {card.label}
+                        </div>
                     </div>
-                    <p className="text-xl md:text-2xl font-medium leading-relaxed mb-8 text-gray-200">
-                      "{item.text}"
-                    </p>
-                    <h4 className="font-bold text-brand uppercase tracking-widest text-sm">
-                      — {item.name}
+                </div>
+            );
+        }
+
+        function HeroMasonry() {
+            const [activeIdx, setActiveIdx] = useState(3);
+            const autoRef = useRef(null);
+            const canvasRef = useRef(null);
+
+            // ── Three.js GLSL Mesh Gradient Background (Google Antigravity-style) ──
+            useEffect(() => {
+                const canvas = canvasRef.current;
+                if (!canvas || !window.THREE) return;
+                const T = window.THREE;
+
+                const W = canvas.offsetWidth  || window.innerWidth;
+                const H = canvas.offsetHeight || window.innerHeight;
+
+                // Orthographic camera so our full-screen quad is 0..1 UV space
+                const scene    = new T.Scene();
+                const camera   = new T.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+                const renderer = new T.WebGLRenderer({ canvas, alpha: true, antialias: false });
+                renderer.setSize(W, H);
+                renderer.setPixelRatio(1);
+                renderer.setClearColor(0x000000, 0);
+
+                // ── GLSL shaders ────────────────────────────────────────────────
+                const vertSrc = `
+                    varying vec2 vUv;
+                    void main() { vUv = uv; gl_Position = vec4(position, 1.0); }
+                `;
+
+                const fragSrc = `
+                    precision highp float;
+                    uniform float u_time;
+                    uniform vec2  u_mouse;   // -1..1 NDC, smoothed
+                    uniform vec2  u_res;     // canvas px
+                    varying vec2  vUv;
+
+                    void main() {
+                        // Aspect-correct coords (so dots are round at any resolution)
+                        float aspect = u_res.x / u_res.y;
+                        vec2 uv = vec2(vUv.x * aspect, vUv.y);
+
+                        // ── Halftone grid ────────────────────────────────────────────
+                        float cols = 55.0;
+                        float cellSz = aspect / cols;           // cell size in UV space
+                        vec2  cellUV = uv / cellSz;             // which column/row
+                        vec2  cellId = floor(cellUV);
+                        vec2  cell   = fract(cellUV) - 0.5;     // -0.5..0.5 per cell
+
+                        // World-space centre of this dot
+                        vec2 centre = (cellId + 0.5) * cellSz;
+
+                        // ── Mouse in the same aspect-correct space ───────────────────
+                        vec2 mouseUV = vec2((u_mouse.x * 0.5 + 0.5) * aspect,
+                                            u_mouse.y * 0.5 + 0.5);
+                        float dMouse = length(centre - mouseUV);
+
+                        // ── Ripple wave ──────────────────────────────────────────────
+                        float freq  = 38.0;          // spatial frequency of rings
+                        float speed = 4.2;           // propagation speed
+                        float wave  = sin(dMouse * freq - u_time * speed);
+                        float fade  = exp(-dMouse * 3.8); // falls off with distance
+                        float ripple = wave * fade;  // signed, -1..1
+
+                        // ── Ambient slow breathing ───────────────────────────────────
+                        float breath = sin(u_time * 0.55
+                                           + cellId.x * 0.18
+                                           + cellId.y * 0.22) * 0.5 + 0.5;
+
+                        // ── Dot radius ───────────────────────────────────────────────
+                        float baseR = 0.13;
+                        float r = baseR
+                                + breath  * 0.04          // slow ambient pulse
+                                + ripple  * 0.13;         // ripple expands/contracts
+                        r = clamp(r, 0.03, 0.30);
+
+                        float dist   = length(cell);
+                        float dotMask = 1.0 - smoothstep(r - 0.015, r + 0.015, dist);
+
+                        // ── Brand-color tinting per cell ─────────────────────────────
+                        float ci = mod(cellId.x * 3.0 + cellId.y * 7.0, 4.0);
+                        vec3 tint;
+                        if      (ci < 1.0) tint = vec3(0.18, 0.62, 0.85); // #2D9ED8 blue
+                        else if (ci < 2.0) tint = vec3(0.55, 0.36, 0.97); // #8b5cf6 purple
+                        else if (ci < 3.0) tint = vec3(0.98, 0.45, 0.09); // #f97316 orange
+                        else               tint = vec3(0.06, 0.73, 0.51); // #10b981 teal
+
+                        // ── Dot opacity ──────────────────────────────────────────────
+                        // Idle: very subtle. Near mouse ripple peak: more visible.
+                        float visibility = 0.10 + breath * 0.04 + max(0.0, ripple) * fade * 0.35;
+                        visibility = clamp(visibility, 0.0, 0.55);
+
+                        // ── Compose ──────────────────────────────────────────────────
+                        vec3 bg    = vec3(0.965, 0.975, 0.990);
+                        vec3 color = mix(bg, tint * 0.55 + vec3(0.42), dotMask * visibility);
+
+                        gl_FragColor = vec4(color, 1.0);
+                    }
+                `;
+
+                const uniforms = {
+                    u_time:  { value: 0.0 },
+                    u_mouse: { value: new T.Vector2(0.0, 0.0) },
+                    u_res:   { value: new T.Vector2(W, H) },
+                };
+
+                const geo = new T.PlaneGeometry(2, 2);
+                const mat = new T.ShaderMaterial({
+                    vertexShader:   vertSrc,
+                    fragmentShader: fragSrc,
+                    uniforms,
+                    transparent: true,
+                    depthWrite: false,
+                });
+                scene.add(new T.Mesh(geo, mat));
+
+                // ── mouse tracking (smooth lerp target) ─────────────────────
+                const target = { x: 0, y: 0 };
+                const current = { x: 0, y: 0 };
+                const onMove = (e) => {
+                    const r = canvas.getBoundingClientRect();
+                    target.x = ((e.clientX - r.left) / r.width)  *  2 - 1;
+                    target.y = -((e.clientY - r.top)  / r.height) *  2 + 1;
+                };
+                window.addEventListener('mousemove', onMove);
+
+                // ── render loop ─────────────────────────────────────────────
+                let raf;
+                const clock = new T.Clock();
+                const animate = () => {
+                    raf = requestAnimationFrame(animate);
+                    // Smooth lerp toward mouse
+                    current.x += (target.x - current.x) * 0.04;
+                    current.y += (target.y - current.y) * 0.04;
+                    uniforms.u_time.value  = clock.getElapsedTime();
+                    uniforms.u_mouse.value.set(current.x, current.y);
+                    renderer.render(scene, camera);
+                };
+                animate();
+
+                // ── resize ──────────────────────────────────────────────────
+                const onResize = () => {
+                    renderer.setSize(canvas.offsetWidth, canvas.offsetHeight);
+                    uniforms.u_res.value.set(canvas.offsetWidth, canvas.offsetHeight);
+                };
+                window.addEventListener('resize', onResize);
+
+                return () => {
+                    cancelAnimationFrame(raf);
+                    window.removeEventListener('mousemove', onMove);
+                    window.removeEventListener('resize', onResize);
+                    renderer.dispose();
+                    geo.dispose();
+                    mat.dispose();
+                };
+            }, []);
+            // ─────────────────────────────────────────────────────────────────────
+
+            const startAuto = () => {
+                clearInterval(autoRef.current);
+                autoRef.current = setInterval(() => {
+                    setActiveIdx(prev => (prev + 1) % HERO_CARDS.length);
+                }, 3000);
+            };
+
+            useEffect(() => {
+                startAuto();
+                return () => clearInterval(autoRef.current);
+            }, []);
+
+            const handleCardClick = (idx) => {
+                setActiveIdx(idx);
+                startAuto();
+            };
+
+            // Drag/swipe support
+            const dragStart = useRef(null);
+            const handleDragStart = (e) => { dragStart.current = e.clientX ?? e.touches?.[0]?.clientX; };
+            const handleDragEnd = (e) => {
+                const end = e.clientX ?? e.changedTouches?.[0]?.clientX;
+                if (dragStart.current === null || end === undefined) return;
+                const diff = end - dragStart.current;
+                if (Math.abs(diff) > 40) {
+                    setActiveIdx(prev => {
+                        const next = diff < 0 ? (prev + 1) % HERO_CARDS.length : (prev - 1 + HERO_CARDS.length) % HERO_CARDS.length;
+                        return next;
+                    });
+                    startAuto();
+                }
+                dragStart.current = null;
+            };
+
+            const visibleCards = HERO_CARDS.map((card, i) => {
+                const offset = i - activeIdx;
+                // Wrap around: pick shortest path
+                const wrap = HERO_CARDS.length;
+                let norm = ((offset + Math.floor(wrap / 2)) % wrap + wrap) % wrap - Math.floor(wrap / 2);
+                return { card, i, offset: norm };
+            }).filter(({ offset }) => Math.abs(offset) <= 2);
+
+            return (
+                <section
+                    className="relative w-full flex flex-col items-center overflow-hidden z-0"
+                    style={{
+                        minHeight: '100vh',
+                        background: 'linear-gradient(160deg, #f0f8ff 0%, #fafafa 50%, #fff8f0 100%)',
+                        paddingTop: '40px',
+                    }}
+                >
+                    {/* ── Three.js interactive particle canvas (background only) ── */}
+                    <canvas
+                        ref={canvasRef}
+                        style={{
+                            position: 'absolute', inset: 0,
+                            width: '100%', height: '100%',
+                            zIndex: 0, pointerEvents: 'none',
+                            display: 'block',
+                        }}
+                    />
+                    {/* Ambient background blobs */}
+                    <div style={{
+                        position: 'absolute', top: '5%', left: '8%', width: 340, height: 340,
+                        borderRadius: '50%', background: 'radial-gradient(circle, rgba(45,158,216,0.10) 0%, transparent 70%)',
+                        filter: 'blur(40px)', pointerEvents: 'none',
+                    }} />
+                    <div style={{
+                        position: 'absolute', top: '15%', right: '6%', width: 260, height: 260,
+                        borderRadius: '50%', background: 'radial-gradient(circle, rgba(139,92,246,0.09) 0%, transparent 70%)',
+                        filter: 'blur(40px)', pointerEvents: 'none',
+                    }} />
+                    <div style={{
+                        position: 'absolute', bottom: '10%', left: '15%', width: 200, height: 200,
+                        borderRadius: '50%', background: 'radial-gradient(circle, rgba(245,158,11,0.08) 0%, transparent 70%)',
+                        filter: 'blur(35px)', pointerEvents: 'none',
+                    }} />
+
+                    {/* Hero text */}
+                    <div className="fade-up text-center px-6" style={{ position: 'relative', zIndex: 10 }}>
+                        <h1 style={{
+                            fontSize: 'clamp(2.4rem, 6vw, 4.8rem)',
+                            fontWeight: 700, lineHeight: 1.08,
+                            letterSpacing: '-1.5px', color: '#0f172a',
+                            margin: 0,
+                        }}>
+                            Elevate Yourself With<br />
+                            <span style={{
+                                color: '#2D9ED8',
+                            }}>Printos</span>
+                        </h1>
+                    </div>
+
+                    {/* Card Carousel */}
+                    <div
+                        style={{
+                            position: 'relative',
+                            width: '100%',
+                            height: 'clamp(370px, 40vw, 430px)',
+                            marginTop: '18px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            userSelect: 'none',
+                        }}
+                        onMouseDown={handleDragStart}
+                        onMouseUp={handleDragEnd}
+                        onTouchStart={handleDragStart}
+                        onTouchEnd={handleDragEnd}
+                    >
+                        {visibleCards.map(({ card, i, offset }) => (
+                            <StampCard
+                                key={card.id}
+                                card={card}
+                                isActive={i === activeIdx}
+                                offset={offset}
+                                onClick={() => handleCardClick(i)}
+                            />
+                        ))}
+                    </div>
+
+                    {/* Dot Indicators */}
+                    <div style={{ display: 'flex', gap: '10px', marginTop: '14px', position: 'relative', zIndex: 10 }}>
+                        {HERO_CARDS.map((c, i) => (
+                            <button
+                                key={c.id}
+                                onClick={() => handleCardClick(i)}
+                                style={{
+                                    width: i === activeIdx ? '28px' : '8px',
+                                    height: '8px',
+                                    borderRadius: '999px',
+                                    background: i === activeIdx ? (HERO_CARDS[activeIdx]?.color || '#2D9ED8') : '#cbd5e1',
+                                    border: 'none',
+                                    cursor: 'pointer',
+                                    padding: 0,
+                                    transition: 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                                }}
+                                aria-label={`Go to ${c.label}`}
+                            />
+                        ))}
+                    </div>
+
+                    {/* Active card CTA */}
+                    <div style={{
+                        marginTop: '18px', position: 'relative', zIndex: 10,
+                        display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '14px',
+                    }}>
+                        <a href="#"
+                            style={{
+                                display: 'inline-flex', alignItems: 'center', gap: '8px',
+                                background: HERO_CARDS[activeIdx]?.color || '#2D9ED8',
+                                color: 'white', fontWeight: 700, fontSize: '15px',
+                                padding: '13px 32px', borderRadius: '999px',
+                                boxShadow: `0 12px 30px -8px ${HERO_CARDS[activeIdx]?.color || '#2D9ED8'}66`,
+                                textDecoration: 'none',
+                                transition: 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                                letterSpacing: '-0.2px',
+                            }}
+                            onMouseOver={e => { e.currentTarget.style.transform = 'translateY(-3px) scale(1.04)'; e.currentTarget.style.boxShadow = `0 18px 40px -8px ${HERO_CARDS[activeIdx]?.color || '#2D9ED8'}80`; }}
+                            onMouseOut={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = `0 12px 30px -8px ${HERO_CARDS[activeIdx]?.color || '#2D9ED8'}66`; }}
+                        >
+                            Shop {HERO_CARDS[activeIdx]?.label}
+                            <span className="material-symbols-rounded" style={{ fontSize: '20px' }}>arrow_forward</span>
+                        </a>
+                    </div>
+
+                </section>
+            );
+        }
+
+        // ─── DATA ─────────────────────────────────────────────────────────────────
+        const BUSINESS_NEEDS = [
+            {
+                id: 1,
+                title: "Startups",
+                desc: "Agile, cost-effective branding & essential prints.",
+                shape: "sunny",
+                image: "https://img.freepik.com/free-photo/startup-business-progress-strategy-enterprise_53876-127927.jpg?semt=ais_hybrid&w=740&q=80"
+            },
+            {
+                id: 2,
+                title: "Retail & E-commerce",
+                desc: "Stunning packaging, tags, and promotional inserts.",
+                shape: "clover",
+                image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                id: 3,
+                title: "Events & Exhibitions",
+                desc: "High-impact banners, lanyards, and standees.",
+                shape: "cookie",
+                image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                id: 4,
+                title: "Corporate Offices",
+                desc: "Professional stationery and official branding.",
+                shape: "square",
+                image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80"
+            }
+        ];
+
+        const POPULAR_CATEGORIES = [
+            { id: 1, title: "Apparel", image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80" },
+            { id: 2, title: "Stationery", image: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=800&q=80" },
+            { id: 3, title: "Packaging", image: "https://tse1.mm.bing.net/th/id/OIP.9fwp9I5SuEEiUUVpdC6g0wHaEY?rs=1&pid=ImgDetMain&o=7&rm=3" },
+            { id: 4, title: "Signage", image: "https://festoonsigns.com/wp-content/uploads/2023/06/Hospital-Signage.jpg" }
+        ];
+        const NEW_LAUNCHES = [
+            {
+                id: 1, title: "Eco-Friendly Mailers", image:
+                    "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=400&q=80"
+            },
+            {
+                id: 2, title: "Holographic Stickers", image:
+                    "https://images.unsplash.com/photo-1572375992501-4b0892d50c69?auto=format&fit=crop&w=400&q=80"
+            },
+            {
+                id: 3, title: "Embroidered Caps", image:
+                    "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=400&q=80"
+            },
+            {
+                id: 4, title: "Metallic Business Cards", image:
+                    "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=400&q=80"
+            },
+            {
+                id: 5, title: "Custom Water Bottles", image:
+                    "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=400&q=80"
+            }
+        ];
+        const BEST_SELLERS = [
+            {
+                id: 1, title: "Premium Cotton T-Shirt", image:
+                    "https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=400&q=80"
+            },
+            {
+                id: 2, title: "Matte Business Cards", image:
+                    "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=400&q=80"
+            },
+            {
+                id: 3, title: "Vinyl Banners", image:
+                    "https://images.unsplash.com/photo-1562564055-71e051d33c19?auto=format&fit=crop&w=400&q=80"
+            },
+            {
+                id: 4, title: "Ceramic Mugs", image:
+                    "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?auto=format&fit=crop&w=400&q=80"
+            },
+            {
+                id: 5, title: "Die-Cut Stickers", image:
+                    "https://images.unsplash.com/photo-1572375992501-4b0892d50c69?auto=format&fit=crop&w=400&q=80"
+            },
+            {
+                id: 6, title: "Custom Hoodies", image:
+                    "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=400&q=80"
+            },
+            {
+                id: 7, title: "Designing", image:
+                    "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=600"
+            },
+            {
+                id: 8, title: "Canvas Prints", image:
+                    "https://images.unsplash.com/photo-1579762593175-20226054cad0?auto=format&fit=crop&w=400&q=80"
+            }
+        ];
+        const TESTIMONIALS = [
+            { id: 1, name: "Sarah Jenkins", text: "The print quality is absolutely phenomenal. Our branded apparel came exactly as we envisioned.", stars: 5 },
+            { id: 2, name: "Michael Chang", text: "Fast turnaround and incredible customer service. The custom packaging elevated our product unboxing.", stars: 5 },
+            { id: 3, name: "Emma Thompson", text: "Beautiful business cards. The matte finish feels so premium and we constantly get compliments.", stars: 4 }
+        ];
+        const FEATURES = [
+            { id: 1, title: "Fast Turn Around", desc: "Get your prints delivered when you need them.", icon: "bolt" },
+            { id: 2, title: "Easy Ordering", desc: "Seamless and hassle-free online checkout.", icon: "touch_app" },
+            { id: 3, title: "Nationwide Quality", desc: "Consistent, premium printing across the board.", icon: "verified" },
+            { id: 4, title: "Wide Product Range", desc: "Everything you need, all in one place.", icon: "category" }
+        ];
+
+        // ─── SECTIONS ─────────────────────────────────────────────────────────────
+
+        function ClientMarquee() {
+            const CLIENTS = [
+                "Bank Of Baroda", "SBI", "RBI", "Infosys", "TCS", "UST", "NIPM",
+                "Asianet", "Asian College of Engineering", "Kerala Bank",
+                "Shamy Catering", "Kairali", "Flavour Asia", "Mar Ivanious", "Jacob's Caterers"
+            ];
+
+            // Duplicate the list to create a seamless infinite loop
+            const marqueeItems = [...CLIENTS, ...CLIENTS];
+
+            return (
+                <section className="py-12 bg-white border-b border-gray-100 overflow-hidden relative">
+                    <div className="max-w-[1600px] mx-auto px-6 lg:px-12 mb-6">
+                        <h3 className="text-xs md:text-sm font-bold text-gray-400 uppercase tracking-widest text-center">
+                            Trusted by industry leaders
+                        </h3>
+                    </div>
+
+                    {/* Gradient Masks for smooth fading edges */}
+                    <div
+                        className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none">
+                    </div>
+                    <div
+                        className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none">
+                    </div>
+
+                    <div className="relative w-full flex overflow-hidden">
+                        <div className="marquee-track flex items-center">
+                            {marqueeItems.map((client, idx) => (
+                                <div key={idx} className="flex-shrink-0 flex items-center justify-center px-8 md:px-12">
+                                    <span
+                                        className="text-xl md:text-3xl font-black text-gray-200 uppercase tracking-tighter hover:text-brand transition-colors cursor-default whitespace-nowrap">
+                                        {client}
+                                    </span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            );
+        }
+
+        // Dynamic Shape Card Component for Morphing
+        function ShapeCard({ item, index }) {
+            const [isHovered, setIsHovered] = useState(false);
+
+            // Generates an SVG path with exactly 120 points (L commands)
+            // Having matching vertex counts allows CSS to seamlessly morph the path
+            const path = React.useMemo(() => {
+                const type = isHovered ? 'circle' : item.shape;
+                let p = "";
+                for (let i = 0; i < 360; i += 3) {
+                    const rad = (i * Math.PI) / 180;
+                    let r = 50;
+
+                    if (type === 'sunny') {
+                        r = 45 + 5 * Math.cos(8 * rad);
+                    } else if (type === 'clover') {
+                        r = 42 + 8 * Math.cos(4 * rad);
+                    } else if (type === 'cookie') {
+                        r = 47 + 3 * Math.cos(12 * rad);
+                    } else if (type === 'square') {
+                        const cos = Math.abs(Math.cos(rad));
+                        const sin = Math.abs(Math.sin(rad));
+                        r = 48 / Math.pow(Math.pow(cos, 5) + Math.pow(sin, 5), 1 / 5);
+                    } else if (type === 'circle') {
+                        r = 48;
+                    }
+
+                    const x = 50 + r * Math.sin(rad);
+                    const y = 50 - r * Math.cos(rad);
+
+                    if (i === 0) p += `M ${x.toFixed(3)} ${y.toFixed(3)} `;
+                    else p += `L ${x.toFixed(3)} ${y.toFixed(3)} `;
+                }
+                return p + "Z";
+            }, [isHovered, item.shape]);
+
+            return (
+                <div
+                    className="fade-up flex flex-col items-center group cursor-pointer"
+                    style={{ transitionDelay: `${index * 50}ms` }}
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                >
+                    {/* SVG Image Mask & Morphing Path */}
+                    <svg viewBox="0 0 100 100"
+                        className="w-full max-w-[240px] drop-shadow-[0_15px_25px_rgba(0,0,0,0.1)] group-hover:drop-shadow-[0_20px_35px_rgba(45,158,216,0.25)] transition-all duration-500 transform group-hover:-translate-y-3"
+                        preserveAspectRatio="xMidYMid meet" style={{ overflow: 'visible' }}>
+                        <defs>
+                            <pattern id={`img-pattern-${item.id}`} patternUnits="userSpaceOnUse" width="100" height="100">
+                                <image href={item.image} x="0" y="0" width="100" height="100" preserveAspectRatio="xMidYMid slice"
+                                    style={{
+                                        transition: 'transform 0.7s cubic-bezier(0.4, 0, 0.2, 1)',
+                                        transformOrigin: '50px 50px', transform: isHovered ? 'scale(1.15)' : 'scale(1)'
+                                    }} />
+                            </pattern>
+                        </defs>
+
+                        <path d={path} fill={`url(#img-pattern-${item.id})`} style={{
+                            transition: 'd 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
+                        }} />
+                    </svg>
+
+                    {/* Standalone Text Below */}
+                    <div className="mt-8 text-center px-4">
+                        <h3 className="text-xl md:text-2xl font-bold text-dark group-hover:text-brand transition-colors">
+                            {item.title}
+                        </h3>
+                    </div>
+                </div>
+            );
+        }
+
+        function ShopByBusinessNeeds() {
+            return (
+                <section className="py-24 bg-white relative">
+                    <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+                        <div className="text-center mb-16 fade-up">
+                            <span className="text-brand font-bold tracking-widest uppercase text-xs mb-3 block">Solutions</span>
+                            <h2 className="text-3xl md:text-5xl font-black text-dark tracking-tight">Shop By Business Needs</h2>
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-10">
+                            {BUSINESS_NEEDS.map((item, index) => (
+                                <ShapeCard key={item.id} item={item} index={index} />
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            );
+        }
+
+        function CategoryMorphCard({ cat, index }) {
+            const [isHovered, setIsHovered] = useState(false);
+            const shapes = ['blob', 'triangle', 'star', 'hexagon'];
+            const baseShape = shapes[index % 4];
+
+            const path = React.useMemo(() => {
+                const type = isHovered ? 'squircle' : baseShape;
+                let p = "";
+                for (let i = 0; i < 360; i += 3) {
+                    const rad = (i * Math.PI) / 180;
+                    let r = 50;
+                    if (type === 'blob') {
+                        r = 43 + 4 * Math.cos(3 * rad) + 3 * Math.sin(2 * rad);
+                    } else if (type === 'triangle') {
+                        r = 42 + 6 * Math.cos(3 * rad);
+                    } else if (type === 'star') {
+                        r = 43 + 6 * Math.cos(5 * rad);
+                    } else if (type === 'hexagon') {
+                        r = 45 + 3 * Math.cos(6 * rad);
+                    } else if (type === 'squircle') {
+                        const cos = Math.abs(Math.cos(rad));
+                        const sin = Math.abs(Math.sin(rad));
+                        r = 48 / Math.pow(Math.pow(cos, 5) + Math.pow(sin, 5), 1 / 5);
+                    }
+                    const x = 50 + r * Math.sin(rad);
+                    const y = 50 - r * Math.cos(rad);
+                    if (i === 0) p += `M ${x.toFixed(3)} ${y.toFixed(3)} `;
+                    else p += `L ${x.toFixed(3)} ${y.toFixed(3)} `;
+                }
+                return p + "Z";
+            }, [isHovered, baseShape]);
+
+            return (
+                <div
+                    className="fade-up group cursor-pointer flex flex-col items-center"
+                    style={{ transitionDelay: `${index * 50}ms` }}
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                >
+                    <svg viewBox="0 0 100 100"
+                        className="w-full max-w-[260px] drop-shadow-[0_15px_25px_rgba(0,0,0,0.1)] group-hover:drop-shadow-[0_20px_35px_rgba(45,158,216,0.25)] transition-all duration-500 transform group-hover:-translate-y-3"
+                        preserveAspectRatio="xMidYMid meet" style={{ overflow: 'visible' }}>
+                        <defs>
+                            <pattern id={`cat-pattern-${cat.id}`} patternUnits="userSpaceOnUse" width="100" height="100">
+                                <image href={cat.image} x="0" y="0" width="100" height="100" preserveAspectRatio="xMidYMid slice"
+                                    style={{
+                                        transition: 'transform 0.7s cubic-bezier(0.4, 0, 0.2, 1)',
+                                        transformOrigin: '50px 50px',
+                                        transform: isHovered ? 'scale(1.15)' : 'scale(1)'
+                                    }} />
+                            </pattern>
+                        </defs>
+                        <path d={path} fill={`url(#cat-pattern-${cat.id})`} style={{ transition: 'd 0.5s cubic-bezier(0.4, 0, 0.2, 1)' }} />
+                    </svg>
+                    <h4 className="mt-8 text-2xl font-bold text-dark text-center group-hover:text-brand transition-colors">
+                        {cat.title}
                     </h4>
-                  </div>
-                ))}
-              </div>
-              <div className="swiper-pagination !-bottom-2"></div>
-            </div>
-          </div>
-          <style dangerouslySetInnerHTML={{
-            __html: `
-            .testimonial-swiper .swiper-pagination-bullet { background: #cbd5e1; opacity: 0.5; }
-            .testimonial-swiper .swiper-pagination-bullet-active { background: #2D9ED8; opacity: 1; }
-          `}} />
-        </section>
-      );
-    }
-
-    function FeatureHighlights() {
-      useGSAPAnimations();
-      return (
-        <section className="py-16 bg-white border-b border-gray-100">
-          <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {FEATURES.map(feat => (
-                <div key={feat.id} className="fade-up flex flex-col items-center text-center p-6 rounded-2xl hover:bg-gray-50 transition-colors">
-                  <div className="w-16 h-16 bg-brand-light text-brand rounded-full flex items-center justify-center mb-4">
-                    <span className="material-symbols-rounded" style={{ fontSize: '32px' }}>{feat.icon}</span>
-                  </div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">{feat.title}</h4>
-                  <p className="text-sm font-medium text-gray-500">{feat.desc}</p>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      );
-    }
+            );
+        }
 
-    function Footer() {
-      return (
-        <footer className="bg-dark text-white pt-24 pb-12 rounded-t-[40px] mt-[-40px] relative z-20">
-          <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-20">
-              <div className="lg:col-span-4">
-                <div className="flex items-center space-x-2 mb-6">
-                  <LOGO />
-                  <span className="text-3xl font-extrabold tracking-tighter uppercase">Printos</span>
+        function PopularCategories() {
+            return (
+                <section className="py-24 bg-gray-50">
+                    <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+                        <div className="text-center mb-16 fade-up">
+                            <span
+                                className="text-brand font-bold tracking-widest uppercase text-xs mb-3 block">Explore</span>
+                            <h2 className="text-3xl md:text-5xl font-black text-dark tracking-tight">Popular Categories</h2>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-10">
+                            {POPULAR_CATEGORIES.map((cat, index) => (
+                                <CategoryMorphCard key={cat.id} cat={cat} index={index} />
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            );
+        }
+
+        function NewLaunches() {
+            return (
+                <section className="py-24 bg-white">
+                    <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+                        <div className="mb-16 fade-up md:text-left text-center">
+                            <span className="text-brand font-bold tracking-widest uppercase text-xs mb-3 block">Just
+                                Dropped</span>
+                            <h2 className="text-3xl md:text-5xl font-black text-dark tracking-tight">New Launches</h2>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                            {NEW_LAUNCHES.map((item, index) => (
+                                <div key={item.id}
+                                    className="fade-up relative flex items-center p-5 sm:p-6 bg-white rounded-3xl border-[1.5px] border-gray-100 shadow-[0_8px_24px_rgba(0,0,0,0.03)] cursor-pointer group hover:border-brand/40 hover:shadow-[0_20px_40px_-15px_rgba(45,158,216,0.25)] transition-all duration-500 overflow-hidden"
+                                    style={{ transitionDelay: `${index * 50}ms` }}>
+                                    {/* Subtle background glow on hover to prevent the "empty" feel */}
+                                    <div
+                                        className="absolute inset-0 bg-gradient-to-br from-white via-white to-brand/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
+
+                                    {/* Product Image */}
+                                    <div
+                                        className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-gray-50 overflow-hidden shrink-0 shadow-inner z-10">
+                                        <img src={item.image} alt={item.title} loading="lazy"
+                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                                    </div>
+
+                                    {/* Card Content */}
+                                    <div className="ml-5 sm:ml-6 flex-1 relative z-10 pr-8">
+                                        <span
+                                            className="text-[10px] sm:text-xs font-extrabold uppercase tracking-widest text-brand mb-1.5 block opacity-90">
+                                            New Arrival
+                                        </span>
+                                        <h4
+                                            className="font-bold text-gray-900 group-hover:text-brand transition-colors line-clamp-2 text-lg sm:text-xl leading-snug">
+                                            {item.title}
+                                        </h4>
+                                    </div>
+
+                                    {/* Animated Arrow */}
+                                    <div
+                                        className="absolute right-6 opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-x-4 group-hover:translate-x-0 z-10 text-brand">
+                                        <span className="material-symbols-rounded" style={{
+                                            fontSize: '28px'
+                                        }}>arrow_forward</span>
+                                    </div>
+                                </div>
+                            ))}
+
+                            {/* Claymorphism Promo Banner */}
+                            <div className="fade-up col-span-1 md:col-span-2 lg:col-span-1 clay-panel-brand rounded-3xl p-8 flex flex-col justify-center relative overflow-hidden text-white group cursor-pointer"
+                                style={{ transitionDelay: '250ms' }}>
+                                <div
+                                    className="absolute -right-10 -top-10 w-48 h-48 bg-white/20 rounded-full blur-2xl group-hover:bg-white/30 transition-all duration-500 group-hover:scale-110" />
+                                <div className="absolute -left-10 -bottom-10 w-32 h-32 bg-black/10 rounded-full blur-xl" />
+                                <div className="relative z-10">
+                                    <span
+                                        className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 shadow-sm">Limited
+                                        Time</span>
+                                    <h4 className="text-3xl font-extrabold mb-3 drop-shadow-md">Summer Sale!</h4>
+                                    <p className="text-white/90 mb-8 font-medium text-lg leading-snug">Get up to 30% off on
+                                        all new arrivals this week.</p>
+                                    <button
+                                        className="bg-white text-brand font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all w-fit focus:outline-none">Shop
+                                        Collection</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            );
+        }
+
+        function BestSellers() {
+            const swiperRef = useRef(null);
+
+            // Chunk the 8 items into sets of 4 to form the Bento grid per slide
+            const chunkedBestSellers = [];
+            for (let i = 0; i < BEST_SELLERS.length; i += 4) { chunkedBestSellers.push(BEST_SELLERS.slice(i, i + 4)); }
+            useEffect(() => {
+                swiperRef.current = new Swiper('.bestseller-swiper', {
+                    slidesPerView: 1,
+                    spaceBetween: 40,
+                    loop: true,
+                    speed: 800,
+                    autoplay: { delay: 6000, disableOnInteraction: false },
+                    navigation: {
+                        nextEl: '.bs-next',
+                        prevEl: '.bs-prev',
+                    }
+                });
+                return () => { if (swiperRef.current?.destroy) swiperRef.current.destroy(true, true); };
+            }, []);
+
+            return (
+                <section className="py-24 bg-gray-50 relative overflow-hidden">
+                    <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative">
+
+                        <div className="text-center mb-12 md:mb-16 fade-up">
+                            <h2 className="text-3xl md:text-5xl font-extrabold text-dark tracking-tight">Best Sellers
+                            </h2>
+                            <p className="text-zinc-500 mt-4 text-base md:text-xl font-medium max-w-2xl mx-auto">
+                                Our most loved and highest-rated prints, curated perfectly for your success.
+                            </p>
+                        </div>
+
+                        <div className="relative w-full max-w-[1200px] mx-auto fade-up group/slider">
+
+                            {/* Custom Navigation Arrows */}
+                            <button
+                                className="bs-prev absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 w-14 h-14 bg-white rounded-full shadow-elegant flex items-center justify-center z-20 text-dark hover:text-brand hover:scale-110 transition-all focus:outline-none xl:opacity-0 xl:-translate-x-12 group-hover/slider:opacity-100 group-hover/slider:-translate-x-8">
+                                <span className="material-symbols-rounded" style={{
+                                    fontSize: '28px'
+                                }}>chevron_left</span>
+                            </button>
+                            <button
+                                className="bs-next absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-8 w-14 h-14 bg-white rounded-full shadow-elegant flex items-center justify-center z-20 text-dark hover:text-brand hover:scale-110 transition-all focus:outline-none xl:opacity-0 xl:translate-x-12 group-hover/slider:opacity-100 group-hover/slider:translate-x-8">
+                                <span className="material-symbols-rounded" style={{
+                                    fontSize: '28px'
+                                }}>chevron_right</span>
+                            </button>
+
+                            {/* Swiper Carousel */}
+                            <div className="swiper bestseller-swiper px-2 py-4">
+                                <div className="swiper-wrapper">
+                                    {chunkedBestSellers.map((chunk, slideIndex) => (
+                                        <div key={slideIndex} className="swiper-slide cursor-grab">
+
+                                            {/* Bento Asymmetrical Grid Layout */}
+                                            <div
+                                                className="grid grid-cols-2 grid-rows-3 gap-3 md:gap-5 lg:gap-6 h-[450px] sm:h-[600px] lg:h-[750px] w-full">
+                                                {chunk.map((item, index) => {
+                                                    // Mapped exactly to reference layout
+                                                    let gridClass = "";
+                                                    if (index === 0) gridClass = "col-start-1 row-start-1 row-span-2"; // Top Left (Tall)
+                                                    if (index === 1) gridClass = "col-start-1 row-start-3 row-span-1"; // Bottom Left (Short)
+                                                    if (index === 2) gridClass = "col-start-2 row-start-1 row-span-1"; // Top Right (Short)
+                                                    if (index === 3) gridClass = "col-start-2 row-start-2 row-span-2"; // Bottom Right (Tall)
+
+                                                    return (
+                                                        <div key={item.id} className={`relative group rounded-[24px]
+                                                md:rounded-[32px] overflow-hidden shadow-sm hover:shadow-elegant-hover
+                                                transition-all duration-500 ${gridClass}`}>
+                                                            <img src={item.image} alt={item.title} loading="lazy"
+                                                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+
+                                                            <div
+                                                                className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+
+                                                            <div
+                                                                className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 flex flex-col justify-end">
+                                                                <h3
+                                                                    className="text-white font-bold text-lg sm:text-xl lg:text-3xl drop-shadow-md transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 line-clamp-2">
+                                                                    {item.title}
+                                                                </h3>
+
+                                                                <div
+                                                                    className="h-0 opacity-0 group-hover:h-auto group-hover:opacity-100 group-hover:mt-4 transition-all duration-500 overflow-hidden flex items-center gap-3">
+                                                                    <button
+                                                                        className="bg-white text-dark text-xs sm:text-sm font-bold px-4 sm:px-6 py-2.5 rounded-full shadow-sm hover:bg-brand hover:text-white transition-colors">
+                                                                        Shop Now
+                                                                    </button>
+                                                                    <span
+                                                                        className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-brand transition-colors cursor-pointer shrink-0">
+                                                                        <span className="material-symbols-rounded" style={{
+                                                                            fontSize: '18px'
+                                                                        }}>arrow_forward</span>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    );
+                                                })}
+                                            </div>
+
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            );
+        }
+
+        function CustomerTestimonials() {
+            const swiperRef = useRef(null);
+            useEffect(() => {
+                swiperRef.current = new Swiper('.testimonial-swiper', {
+                    slidesPerView: 1, spaceBetween: 30, loop: true,
+                    pagination: { el: '.swiper-pagination', clickable: true },
+                    autoplay: { delay: 5000 }
+                });
+                return () => { if (swiperRef.current?.destroy) swiperRef.current.destroy(true, true); };
+            }, []);
+            return (
+                <section className="py-24 bg-dark text-white text-center">
+                    <div className="max-w-[800px] mx-auto px-6">
+                        <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-12">Customer Testimonials
+                        </h2>
+                        <div className="swiper testimonial-swiper pb-12">
+                            <div className="swiper-wrapper">
+                                {TESTIMONIALS.map(item => (
+                                    <div key={item.id} className="swiper-slide cursor-grab">
+                                        <div className="flex justify-center mb-6 text-yellow-400">
+                                            {[...Array(item.stars)].map((_, i) => (
+                                                <span key={i} className="material-symbols-rounded star-filled">star</span>
+                                            ))}
+                                        </div>
+                                        <p className="text-xl md:text-2xl font-medium leading-relaxed mb-8 text-gray-200">
+                                            "{item.text}"</p>
+                                        <h4 className="font-bold text-brand uppercase tracking-widest text-sm">— {item.name}
+                                        </h4>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="swiper-pagination !-bottom-2" />
+                        </div>
+                    </div>
+                </section>
+            );
+        }
+
+        function FeatureHighlights() {
+            return (
+                <section className="py-16 bg-white border-b border-gray-100">
+                    <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                            {FEATURES.map(feat => (
+                                <div key={feat.id}
+                                    className="fade-up flex flex-col items-center text-center p-6 rounded-2xl hover:bg-gray-50 transition-colors">
+                                    <div
+                                        className="w-16 h-16 bg-brand-light text-brand rounded-full flex items-center justify-center mb-4">
+                                        <span className="material-symbols-rounded" style={{
+                                            fontSize: '32px'
+                                        }}>{feat.icon}</span>
+                                    </div>
+                                    <h4 className="text-lg font-bold text-gray-900 mb-2">{feat.title}</h4>
+                                    <p className="text-sm font-medium text-gray-500">{feat.desc}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            );
+        }
+
+        function Footer() {
+            return (
+                <footer className="bg-dark text-white pt-24 pb-12 rounded-t-[40px] relative z-10">
+                    <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-20">
+                            <div className="lg:col-span-4">
+                                <div className="flex items-center space-x-2 mb-6">
+                                    <LOGO /><span
+                                        className="text-3xl font-extrabold tracking-tighter uppercase">Printos</span>
+                                </div>
+                                <p className="text-gray-400 font-medium leading-relaxed max-w-sm mb-8">Elevating brands
+                                    with premium quality printing. Fast, reliable, and spectacular.</p>
+                                <div className="flex gap-4">
+                                    <a href="#"
+                                        className="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#25D366] hover:scale-110 transition-all"
+                                        title="WhatsApp">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                            className="w-[18px] h-[18px]">
+                                            <path
+                                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                                            <path
+                                                d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.107 1.51 5.837L.057 23.882a.5.5 0 0 0 .61.61l6.045-1.453A11.953 11.953 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.878 9.878 0 0 1-5.034-1.378l-.36-.214-3.742.9.916-3.742-.235-.374A9.878 9.878 0 0 1 2.1 12C2.1 6.533 6.533 2.1 12 2.1c5.466 0 9.9 4.433 9.9 9.9S17.466 21.9 12 21.9z" />
+                                        </svg>
+                                    </a>
+                                    <a href="#"
+                                        className="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#E1306C] hover:scale-110 transition-all"
+                                        title="Instagram">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                            className="w-[18px] h-[18px]">
+                                            <path
+                                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                        </svg>
+                                    </a>
+                                    <a href="#"
+                                        className="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#0A66C2] hover:scale-110 transition-all"
+                                        title="LinkedIn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                            className="w-[18px] h-[18px]">
+                                            <path
+                                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="lg:col-span-2 lg:col-start-6">
+                                <h4 className="font-bold mb-6 text-sm tracking-widest text-brand uppercase">Shop</h4>
+                                <ul className="space-y-4 text-sm font-medium text-gray-400">
+                                    <li><a href="#" className="hover:text-white transition-colors">Business Cards</a>
+                                    </li>
+                                    <li><a href="#" className="hover:text-white transition-colors">Apparel</a></li>
+                                    <li><a href="#" className="hover:text-white transition-colors">Marketing
+                                        Materials</a></li>
+                                    <li><a href="#" className="hover:text-white transition-colors">Packaging</a></li>
+                                </ul>
+                            </div>
+                            <div className="lg:col-span-4">
+                                <h4 className="font-bold mb-6 text-sm tracking-widest text-brand uppercase">Find Us</h4>
+                                <div
+                                    className="w-full h-[220px] rounded-2xl overflow-hidden border border-white/10 shadow-lg relative bg-white/5">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.989774549804!2d76.9489795!3d8.5003727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05bbd52d5d2d5d%3A0xc013d20635c5acab!2sPrintos%20tvm!5e0!3m2!1sen!2sae!4v1773801936162!5m2!1sen!2sae"
+                                        width="100%" height="100%" style={{ border: 0 }} allowFullScreen={true}
+                                        loading="lazy" referrerPolicy="no-referrer-when-downgrade"
+                                        className="absolute inset-0 grayscale-[20%] hover:grayscale-0 transition-all duration-500"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            );
+        }
+
+        // ─── APP ──────────────────────────────────────────────────────────────────
+        function App() {
+            useGlobalGSAPAnimations();
+            useEffect(() => { window.scrollTo(0, 0); setTimeout(() => ScrollTrigger.refresh(), 200); }, []);
+            return (
+                <div className="w-full flex flex-col min-h-screen">
+                    <Header />
+                    <main className="flex-1 w-full bg-white relative z-0">
+                        <HeroMasonry />
+                        <ClientMarquee />
+                        <ShopByBusinessNeeds />
+                        <PopularCategories />
+                        <NewLaunches />
+                        <BestSellers />
+                        <CustomerTestimonials />
+                        <FeatureHighlights />
+                    </main>
+                    <Footer />
                 </div>
-                <p className="text-gray-400 font-medium leading-relaxed max-w-sm mb-8">
-                  Elevating brands with premium quality printing. Fast, reliable, and spectacular. Experience the art of tangibility.
-                </p>
-                <div className="flex gap-4">
-                  <a href="#" className="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#25D366] hover:scale-110 transition-all" title="WhatsApp">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-[18px] h-[18px]">
-                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
-                      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.107 1.51 5.837L.057 23.882a.5.5 0 0 0 .61.61l6.045-1.453A11.953 11.953 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.878 9.878 0 0 1-5.034-1.378l-.36-.214-3.742.9.916-3.742-.235-.374A9.878 9.878 0 0 1 2.1 12C2.1 6.533 6.533 2.1 12 2.1c5.466 0 9.9 4.433 9.9 9.9S17.466 21.9 12 21.9z" />
-                    </svg>
-                  </a>
-                  <a href="#" className="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#E1306C] hover:scale-110 transition-all" title="Instagram">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-[18px] h-[18px]">
-                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-              <div className="lg:col-span-2 lg:col-start-6">
-                <h4 className="font-bold mb-6 text-sm tracking-widest text-brand uppercase">Shop</h4>
-                <ul className="space-y-4 text-sm font-medium text-gray-400">
-                  <li><a href="#" className="hover:text-white transition-colors">Business Cards</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Apparel</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Marketing Materials</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Packaging</a></li>
-                </ul>
-              </div>
-              <div className="lg:col-span-3">
-                <h4 className="font-bold mb-6 text-sm tracking-widest text-brand uppercase">Newsletter</h4>
-                <div className="flex relative">
-                  <input type="email" placeholder="Email address" className="bg-white/10 border border-white/20 text-white placeholder-gray-400 px-4 py-3 rounded-l-lg outline-none focus:border-brand w-full text-sm font-medium" />
-                  <button className="bg-brand text-white px-5 py-3 rounded-r-lg font-bold hover:bg-brand-dark transition-colors flex items-center justify-center">
-                    <span className="material-symbols-rounded" style={{ fontSize: '20px' }}>arrow_right_alt</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </footer>
-      );
-    }
+            );
+        }
 
-    function App() {
-      useEffect(() => {
-        window.scrollTo(0, 0);
-        setTimeout(() => ScrollTrigger.refresh(), 100);
-      }, []);
-
-      return (
-        <div className="w-full flex-col flex min-h-screen">
-          <Header />
-          <main className="flex-1 w-full bg-white relative z-0">
-            <HeroMasonry />
-            <ShopByBusinessNeeds />
-            <PopularCategories />
-            <NewLaunches />
-            <BestSellers />
-            <CustomerTestimonials />
-            <FeatureHighlights />
-          </main>
-          <Footer />
-        </div>
-      );
-    }
-
-    const root = ReactDOM.createRoot(document.getElementById('root'));
-    root.render(<App />);
-  </script>
+        ReactDOM.createRoot(document.getElementById('root')).render(
+            <App />);
+    </script>
 </body>
 
 </html>
